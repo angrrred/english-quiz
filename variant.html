@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вариант</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back">← На главную</a>
+    <h1 id="variant-title">Вариант</h1>
+  </header>
+  <main>
+    <div class="task-nav">
+      <button id="prev-task" class="nav-btn">←</button>
+      <span id="task-indicator">Задание 1 / 2</span>
+      <button id="next-task" class="nav-btn">→</button>
+    </div>
+
+    <section id="task-container"></section>
+
+    <div id="result-box" class="hidden"></div>
+
+    <div class="actions">
+      <button id="check-btn">Проверить</button>
+      <button id="retry-btn" class="hidden">Пройти заново</button>
+    </div>
+  </main>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

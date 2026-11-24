@@ -1,0 +1,154 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f4f6fa;
+  color: #1f2937;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+header {
+  background: #1e3a8a;
+  color: #fff;
+  padding: 20px 16px;
+  text-align: center;
+  position: relative;
+}
+header h1 { font-size: 1.6rem; margin-bottom: 4px; }
+header p { opacity: .85; font-size: .95rem; }
+header .back {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  text-decoration: none;
+  font-size: .9rem;
+  opacity: .9;
+}
+header .back:hover { opacity: 1; text-decoration: underline; }
+
+main { max-width: 780px; margin: 0 auto; padding: 24px 16px 60px; }
+
+/* Главная: карточки вариантов */
+#variants-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+}
+.variant-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 14px;
+  text-align: center;
+  text-decoration: none;
+  color: #1f2937;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  transition: transform .12s, box-shadow .12s;
+  border: 2px solid transparent;
+}
+.variant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+}
+.variant-card .num { font-size: 1.5rem; font-weight: 700; color: #1e3a8a; }
+.variant-card .status { font-size: .85rem; margin-top: 6px; color: #6b7280; }
+.variant-card.done { border-color: #16a34a; }
+.variant-card.done .status { color: #16a34a; font-weight: 600; }
+
+/* Навигация по заданиям */
+.task-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.nav-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #1e3a8a;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.nav-btn:disabled { opacity: .3; cursor: default; }
+#task-indicator { font-weight: 600; color: #374151; }
+
+/* Задания */
+.task-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 6px; color: #1e3a8a; }
+.task-instruction { font-size: .95rem; color: #6b7280; margin-bottom: 20px; }
+
+.word-row, .question-row {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.word-row .word, .question-row .q-text {
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+.word-row select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  font-size: .9rem;
+}
+.question-row label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  cursor: pointer;
+  font-size: .95rem;
+}
+.question-row input[type="radio"] { margin-top: 3px; }
+
+/* Результат */
+#result-box {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.1rem;
+}
+#result-box.good { background: #dcfce7; color: #166534; }
+#result-box.warn { background: #fef9c3; color: #854d0e; }
+#result-box.bad  { background: #fee2e2; color: #991b1b; }
+
+.actions { display: flex; gap: 12px; margin-top: 20px; justify-content: center; }
+.actions button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+#check-btn { background: #1e3a8a; color: #fff; }
+#check-btn:hover { opacity: .9; }
+#retry-btn { background: #e5e7eb; color: #1f2937; }
+#retry-btn:hover { opacity: .85; }
+
+.reset {
+  margin-top: 12px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.5);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: .85rem;
+}
+.reset:hover { background: rgba(255,255,255,.1); }
+
+.hidden { display: none; }
